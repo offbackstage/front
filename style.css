@@ -15,8 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 0 0 40px rgba(0,0,0,.3);
-  margin-top: 6.66em;
-  padding-bottom: 40px;
+  margin: 6.66em 0 0 0;
 }
 a {
   transition: all .3s;
@@ -28,8 +27,12 @@ a {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: calc(80vw);
-  min-height: calc(100vh);
+  padding: 0 11vw;
+  min-height: calc(140vh);
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 69%, rgba(0,0,0,0) 100%);
+  padding-bottom: 40px;
+  z-index: 2;
 }
 .hero {
   margin-top: auto;
@@ -40,10 +43,10 @@ a {
 p {
   max-width: 60ch;
 }
-h1 {
+h1, .h1 {
   font-size: clamp(32px, 12vw, 72px);
-  line-height: 1em;
-  width: 80%;
+  line-height: 1.1em;
+  width: 100%;
   margin: 24px 0 0 0;
 }
 h2, h3 {
@@ -65,9 +68,10 @@ h3 {
   padding: 16px 40px;
   position: relative;
   cursor: pointer;
-  margin: 24px 0;
+  margin: 24px 0 0;
   display: inline-block;
   text-decoration: none;
+  z-index: 2;
 }
 .button:hover {
   opacity: .8;
@@ -91,17 +95,21 @@ h3 {
 }
 .flex-grid > * {
   flex: 1;
-  padding-right: 40px;
+  padding-right: 24px;
 }
 @media (max-width: 666px) {
   .flex-grid {
     display: block;
   }
+  .flex-grid > * {
+    padding-right: 0;
+  }
 }
+
 
 footer {
   font-size: .874em;
-  padding-top: 40px;
+  margin-top: 80px;
   color: #ccc;
 }
 
@@ -109,4 +117,7 @@ footer {
 /* modifiers */
 .colour--grey {
   color: #ccc;
+}
+.margin-top--1sp {
+  margin-top: 40px;
 }
