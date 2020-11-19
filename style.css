@@ -1,0 +1,112 @@
+::selection {
+  color: #060606;
+  background: #fff;
+}
+body {
+  background: #060606 no-repeat;
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 50% 60%;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+  line-height: 1.6;
+  font-weight: 600;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 0 0 40px rgba(0,0,0,.3);
+  margin-top: 6.66em;
+  padding-bottom: 40px;
+}
+a {
+  transition: all .3s;
+}
+
+
+/* flex for text to be at bottom */
+#content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: calc(80vw);
+  min-height: calc(100vh);
+}
+.hero {
+  margin-top: auto;
+}
+
+
+/* typography */
+p {
+  max-width: 60ch;
+}
+h1 {
+  font-size: clamp(32px, 12vw, 72px);
+  line-height: 1em;
+  width: 80%;
+  margin: 24px 0 0 0;
+}
+h2, h3 {
+  font-size: 1.6em;
+}
+h3 {
+  margin-bottom: -8px;
+}
+
+
+/* CTA button */
+.button {
+  background: transparent;
+  color: #060606;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 24px;
+  border: 0;
+  padding: 16px 40px;
+  position: relative;
+  cursor: pointer;
+  margin: 24px 0;
+  display: inline-block;
+  text-decoration: none;
+}
+.button:hover {
+  opacity: .8;
+}
+.button:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background: #fff;
+  transform: skewX(-15deg);
+}
+
+
+/* columns */
+.flex-grid {
+  display: flex;
+}
+.flex-grid > * {
+  flex: 1;
+  padding-right: 40px;
+}
+@media (max-width: 666px) {
+  .flex-grid {
+    display: block;
+  }
+}
+
+footer {
+  font-size: .874em;
+  padding-top: 40px;
+  color: #ccc;
+}
+
+
+/* modifiers */
+.colour--grey {
+  color: #ccc;
+}
