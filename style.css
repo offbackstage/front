@@ -1,6 +1,7 @@
 ::selection {
   color: #060606;
   background: #fff;
+  text-shadow: none;
 }
 body {
   background: #060606 no-repeat;
@@ -14,8 +15,7 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: 0 0 40px rgba(0,0,0,.3);
-  margin: 6.66em 0 0 0;
+  margin: 0;
 }
 a {
   transition: all .3s;
@@ -24,30 +24,23 @@ a {
 
 /* flex for text to be at bottom */
 #content {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 0 11vw;
-  min-height: calc(140vh);
+  padding: 25vw 11vw;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 69%, rgba(0,0,0,0) 100%);
   padding-bottom: 40px;
   z-index: 2;
 }
-.hero {
-  margin-top: auto;
-}
 
 
 /* typography */
 p {
-  max-width: 60ch;
+  max-width: 70ch;
 }
 h1, .h1 {
   font-size: clamp(32px, 7.5vw, 72px);
-  line-height: 1.1em;
-  width: 100%;
-  margin-top: 24px;
+  line-height: 1em;
+  max-width: 50ch;
+  margin: 24px 0;
 }
 h2, h3 {
   font-size: clamp(24px, 5vw, 32px);
@@ -61,6 +54,13 @@ div > h3 {
 }
 .italic {
   font-style: italic;
+}
+p, h1, h2, h3 {
+  text-shadow: 0 0 24px rgba(0,0,0,.4);
+}
+.sc {
+  font-variant: small-caps;
+  letter-spacing: .222em;
 }
 
 
@@ -129,10 +129,11 @@ footer {
   content: '“';
   color: #666;
   font-size: 3em;
+  line-height: 1;
   height: 100%;
   position: absolute;
-  top: -24px;
-  left: -24px;
+  top: 0;
+  left: -32px;
   font-family: serif;
 }
 
@@ -143,4 +144,7 @@ footer {
 }
 .margin-top--1sp {
   margin-top: 80px;
+}
+.margin-top--2sp {
+  margin-top: 144px;
 }
