@@ -7,7 +7,7 @@ body {
   background-image: url(images/bg.jpg);
   background-size: cover;
   background-attachment: fixed;
-  background-position: 50% 60%;
+  background-position: 50% 55%;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   line-height: 1.6;
   font-weight: 600;
@@ -44,17 +44,20 @@ p {
   max-width: 60ch;
 }
 h1, .h1 {
-  font-size: clamp(32px, 12vw, 72px);
+  font-size: clamp(32px, 7.5vw, 72px);
   line-height: 1.1em;
   width: 100%;
-  margin: 24px 0 0 0;
+  margin-top: 24px;
 }
 h2, h3 {
-  font-size: 2em;
+  font-size: clamp(24px, 5vw, 32px);
   line-height: 1.4em;
 }
 h3 {
   margin-bottom: -8px;
+}
+div > h3 {
+  margin-top: 0;
 }
 .italic {
   font-style: italic;
@@ -67,7 +70,7 @@ h3 {
   color: #060606;
   font-family: inherit;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(16px, 4vw, 24px);
   border: 0;
   padding: 16px 40px;
   position: relative;
@@ -96,10 +99,11 @@ h3 {
 /* columns */
 .flex-grid {
   display: flex;
+  flex-wrap: wrap;
 }
 .flex-grid > * {
-  flex: 1;
-  padding-right: 24px;
+  margin: 0 24px 40px 0;
+  flex: 1 0 calc(50% - 24px);
 }
 @media (max-width: 666px) {
   .flex-grid {
@@ -115,6 +119,21 @@ footer {
   font-size: .874em;
   margin-top: 80px;
   color: #ccc;
+}
+
+/* specific */
+.testimonials > * {
+  position: relative;
+}
+.testimonials > *:before {
+  content: '“';
+  color: #666;
+  font-size: 3em;
+  height: 100%;
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  font-family: serif;
 }
 
 
