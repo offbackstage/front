@@ -62,6 +62,12 @@ p, h1, h2, h3 {
   font-variant: small-caps;
   letter-spacing: .222em;
 }
+a {
+  color: #33ffcc;
+}
+a: hover {
+  color: #29bb99;
+}
 
 
 /* CTA button */
