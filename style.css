@@ -8,7 +8,7 @@ body {
   background-image: url(images/bg.jpg);
   background-size: cover;
   background-attachment: fixed;
-  background-position: 50% 55%;
+  background-position: 50% 50%;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
   line-height: 1.6;
   font-weight: 600;
@@ -16,6 +16,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+}
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    background-size: 200%;
+    background-position: 30% -15%;
+  }
 }
 a {
   transition: all .3s;
