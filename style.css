@@ -77,6 +77,9 @@ a {
 a:hover {
   color: #29bb99;
 }
+small {
+  color: #ccc;
+}
 
 
 /* CTA button */
@@ -151,7 +154,6 @@ footer {
   left: -32px;
   font-family: serif;
 }
-
 
 /* modifiers */
 .colour--grey {

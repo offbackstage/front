@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>OFFBACKSTAGE - Download video</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="twitter:image" content="./images/generic.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@off_backstage">
+  <meta property="og:title" content="OFFBACKSTAGE - Download video">
+  <meta property="og:description" content="A new kind of online experiences for you and your fans.">
+  <meta property="og:image" content="./images/generic.png">
+  <meta property="og:url" content="https://offbackstage.com">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-T4DMS8Q');</script>
+  <!-- End Google Tag Manager -->
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4DMS8Q"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="content--noBG">
+    <a href="https://offbackstage.com"><img src="./images/logo-square--white.svg" alt="offbackstage logo" width="100" /></a>
+
+    <h1>Get the full Meet & Greet video</h1>
+
+    <article class="container">
+      <!-- Load Stripe.js on your website. -->
+      <script src="https://js.stripe.com/v3"></script>
+      <button id="checkout-button-sku_IUZvZMsPUxjquZ" role="link" class="button">Get the full video</button>
+      <p class="colour--grey">🔒 You will be taken to a secure payment website powered by Stripe</p>
+      <p id="error-message"></p>
+    </article>
+
+    <footer>
+      <p>If you have any questions, please <a href="mailto:help@offbackstage.com">email us</a></p>
+    </footer>
+  </div>
+
+
+  <script>
+  (function() {
+    var stripe = Stripe('pk_live_Ml2e49nUuoHtv42COHswdtV4007d6nTr2Y');
+
+    var checkoutButton = document.getElementById('checkout-button-sku_IUZvZMsPUxjquZ');
+    checkoutButton.addEventListener('click', function () {
+      stripe.redirectToCheckout({
+        items: [{sku: 'sku_IUZvZMsPUxjquZ', quantity: 1}],
+        mode: 'payment',
+        successUrl: 'https://offbackstage.com/success',
+        cancelUrl: 'https://offbackstage.com/cancelled',
+      })
+      .then(function (result) {
+        if (result.error) {
+          var displayError = document.getElementById('error-message');
+          displayError.textContent = result.error.message;
+        }
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>
