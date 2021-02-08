@@ -97,6 +97,7 @@ small {
   display: inline-block;
   text-decoration: none;
   z-index: 2;
+  outline: none;
 }
 .button:hover {
   opacity: .8;
